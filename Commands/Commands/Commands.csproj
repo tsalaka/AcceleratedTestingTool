@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B2144B6-CB0F-4F56-99DA-889D82C36113}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AcceleratedTool.Commands</RootNamespace>
+    <AssemblyName>AcceleratedTool.Commands</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\CodeRuleSet\main.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\CodeRuleSet\kronos.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandExecutor.cs" />
+    <Compile Include="Criterias\ExtractOutputData.cs" />
+    <Compile Include="Criterias\ExportData.cs" />
+    <Compile Include="Criterias\TimesheetExtractOutputData.cs" />
+    <Compile Include="EmployeeCommands\ExportEmployeesCustomDateToExcelCommand.cs" />
+    <Compile Include="EmployeeCommands\ExportEmployeesCustomFieldToExcelCommand.cs" />
+    <Compile Include="EmployeeCommands\ExportEmployeesDataToExcelCommand.cs" />
+    <Compile Include="EmployeeCommands\ExportEmployeesLicenseToExcelCommand.cs" />
+    <Compile Include="EmployeeCommands\GetEmployeeDataByPersonNumberCommand.cs" />
+    <Compile Include="EmployeeCommands\GetEmployeePersonIdenititesCommand.cs" />
+    <Compile Include="Exceptions\AddTimesheetItemException.cs" />
+    <Compile Include="Exceptions\FileNotAccessibleException.cs" />
+    <Compile Include="Exceptions\FileNotExistException.cs" />
+    <Compile Include="Exceptions\InvalidDataFormatException.cs" />
+    <Compile Include="Exceptions\RemoveTimesheetItemException.cs" />
+    <Compile Include="Exceptions\TimesheetItemBaseException.cs" />
+    <Compile Include="Exceptions\TimesheetItemType.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="ICommandExecutor.cs" />
+    <Compile Include="ICommandFactory.cs" />
+    <Compile Include="Mappers\DbData\BaseDbDataMapper.cs" />
+    <Compile Include="Mappers\DbData\ExcelToModelDbDatamapper.cs" />
+    <Compile Include="Mappers\ExcelCustomDateMapper.cs" />
+    <Compile Include="Mappers\ExcelCustomFieldMapper.cs" />
+    <Compile Include="Mappers\ExcelEmployeeMapper.cs" />
+    <Compile Include="Mappers\ExcelLicenseMapper.cs" />
+    <Compile Include="Mappers\HyperFindMapper.cs" />
+    <Compile Include="Mappers\PersonalityMapper.cs" />
+    <Compile Include="Mappers\Resolvers\PersonaityIdentityResolver.cs" />
+    <Compile Include="Mappers\TestNameMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestApiLoginCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataBase\DataBaseAccess\DataBaseAccess.csproj">
+      <Project>{d59ebcf0-c12c-4370-903b-71603551ab8d}</Project>
+      <Name>DataBaseAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Excel\Excel.Models\Excel.Models.csproj">
+      <Project>{297ad6ec-e274-45d5-bc6f-f58e3aec8d4d}</Project>
+      <Name>Excel.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Excel\Excel\ExcelDocument.csproj">
+      <Project>{09d4ad6b-a37f-47ef-b46e-c6bb437c77d3}</Project>
+      <Name>ExcelDocument</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Models.csproj">
+      <Project>{4901a2e6-5bfd-4e67-949f-3bf403ad0b75}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XmlApi\XmlApi\XmlApi.csproj">
+      <Project>{eba552e1-b958-402f-b561-0dc46c02345e}</Project>
+      <Name>XmlApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

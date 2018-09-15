@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBA552E1-B958-402F-B561-0DC46C02345E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AcceleratedTool.XmlApi</RootNamespace>
+    <AssemblyName>AcceleratedTool.XmlApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StyleCopTreatErrorsAsWarnings>true</StyleCopTreatErrorsAsWarnings>
+    <CodeAnalysisRuleSet>..\..\CodeRuleSet\main.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StyleCopTreatErrorsAsWarnings>true</StyleCopTreatErrorsAsWarnings>
+    <CodeAnalysisRuleSet>..\..\CodeRuleSet\kronos.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\Requests\WSABonusDeductRule.cs" />
+    <Compile Include="Contracts\Requests\Employee.cs" />
+    <Compile Include="Contracts\Requests\PayCodeEdits\AddPayCodeEdit.cs" />
+    <Compile Include="Contracts\Requests\PayCodeEdits\DeletePayCodeEdit.cs" />
+    <Compile Include="Contracts\Requests\PayCodeEdits\PayCodeEditBase.cs" />
+    <Compile Include="Contracts\Requests\Period.cs" />
+    <Compile Include="Contracts\Requests\Punch.cs" />
+    <Compile Include="Contracts\Requests\Schedules\Schedule.cs" />
+    <Compile Include="Contracts\Requests\Schedules\ScheduleShift.cs" />
+    <Compile Include="Contracts\Requests\Schedules\ShiftSegment.cs" />
+    <Compile Include="Contracts\Requests\TimeFramePeriod.cs" />
+    <Compile Include="Contracts\Requests\Timesheet.cs" />
+    <Compile Include="Contracts\Requests\WSABreakRule.cs" />
+    <Compile Include="Contracts\Requests\WSAExceptionRule.cs" />
+    <Compile Include="Contracts\Requests\WSAOvertimeRule.cs" />
+    <Compile Include="Contracts\Requests\WSAPayCode.cs" />
+    <Compile Include="Contracts\Requests\WSAPayRule.cs" />
+    <Compile Include="Contracts\Requests\WSAPunchRoundRule.cs" />
+    <Compile Include="Contracts\Requests\WSAShiftGuarantee.cs" />
+    <Compile Include="Contracts\Requests\WSAWorkRule.cs" />
+    <Compile Include="Contracts\Responses\Employee.cs" />
+    <Compile Include="Contracts\Responses\ExceptionRules\WSAExceptionRule.cs" />
+    <Compile Include="Contracts\Responses\GDAPAssignment.cs" />
+    <Compile Include="Contracts\Responses\Identity.cs" />
+    <Compile Include="Contracts\Responses\JobAssignments\EmploymentTermAssignment.cs" />
+    <Compile Include="Contracts\Responses\JobAssignments\JobAssignment.cs" />
+    <Compile Include="Contracts\Responses\JobAssignments\JobAssignmentData.cs" />
+    <Compile Include="Contracts\Responses\JobAssignments\JobAssignmentDetails.cs" />
+    <Compile Include="Contracts\Responses\JobAssignments\JobAssignmentDetailsData.cs" />
+    <Compile Include="Contracts\Responses\OvertimeRules\WSAOvertimeRule.cs" />
+    <Compile Include="Contracts\Responses\PayRules\SimpleValue.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WorkRuleGeneral.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WorkRulePCDistr.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WSAEffectivePayRule.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WSAEffectiveWorkRule.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WSAPayRule.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WSAWorkRule.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WSAWorkRuleGeneral.cs" />
+    <Compile Include="Contracts\Responses\PayRules\WSAWorkRulePCDistr.cs" />
+    <Compile Include="Contracts\Responses\Personality.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\AccessAssignment.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\AccessAssignmentData.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\BadgeAssignment.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\CustomDate.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\CustomData.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\EmploymentStatus.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\HomeAccount.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\PersonAccessAssignment.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\PersonInformation.cs" />
+    <Compile Include="Contracts\Responses\PersonInformations\PersonInformationData.cs" />
+    <Compile Include="Contracts\Responses\PersonLicenseType.cs" />
+    <Compile Include="Contracts\Responses\PostalAddress.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\DailyTotals.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\DateTotals.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\InPunch.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\OutPunch.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\PayCodeEdit.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\Period.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\PeriodTotalData.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\PeriodTotals.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\Punch.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\TimeFramePeriod.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\TimekeepingException.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\Timesheet.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\Total.cs" />
+    <Compile Include="Contracts\Responses\Timesheets\TotaledSpan.cs" />
+    <Compile Include="Contracts\Responses\Users\User.cs" />
+    <Compile Include="Contracts\Responses\Users\UserAccount.cs" />
+    <Compile Include="Contracts\Responses\Users\UserAccountData.cs" />
+    <Compile Include="Contracts\Responses\Users\UserData.cs" />
+    <Compile Include="Contracts\Responses\BonusDeductRules\WSABonusDeductRule.cs" />
+    <Compile Include="Contracts\Responses\WSABreakRule.cs" />
+    <Compile Include="Contracts\Responses\WSAPayCode.cs" />
+    <Compile Include="Contracts\Responses\WSAPunchRoundRule.cs" />
+    <Compile Include="Contracts\Responses\ShiftGuarantee\WSAShiftGuarantee.cs" />
+    <Compile Include="Exceptions\XmlApiLoginException.cs" />
+    <Compile Include="Exceptions\XmlApiErrorStatus.cs" />
+    <Compile Include="Exceptions\XmlApiServerException.cs" />
+    <Compile Include="Extentions\BooleanExtention.cs" />
+    <Compile Include="Extentions\DateRangeExtention.cs" />
+    <Compile Include="Extentions\TimeSpanExtention.cs" />
+    <Compile Include="Extentions\DateTimeExtention.cs" />
+    <Compile Include="Contracts\Responses\PersonData.cs" />
+    <Compile Include="Contracts\Responses\PersonIdentity.cs" />
+    <Compile Include="Extentions\XmlObjectExtention.cs" />
+    <Compile Include="Contracts\Requests\Identity.cs" />
+    <Compile Include="Contracts\Requests\Personality.cs" />
+    <Compile Include="Contracts\Requests\PersonIdentity.cs" />
+    <Compile Include="TestLogin\ITestLoginXmlApiService.cs" />
+    <Compile Include="TestLogin\TestLoginRequest.cs" />
+    <Compile Include="TestLogin\TestLoginResponse.cs" />
+    <Compile Include="TestLogin\TestLoginXmlApiService.cs" />
+    <Compile Include="XmlApiService\IWebRequest.cs" />
+    <Compile Include="XmlApiService\Request\LogoffRequest.cs" />
+    <Compile Include="XmlApiService\Request\RequestBody.cs" />
+    <Compile Include="XmlApiService\Response\Error.cs" />
+    <Compile Include="XmlApiService\Response\ErrorResponse.cs" />
+    <Compile Include="XmlApiService\Response\LoginResponse.cs" />
+    <Compile Include="XmlApiService\Request\LogonRequest.cs" />
+    <Compile Include="XmlApiService\Request\XmlApiRequest.cs" />
+    <Compile Include="XmlApiService\Response\EmptyResponseBody.cs" />
+    <Compile Include="XmlApiService\Response\ResponseBody.cs" />
+    <Compile Include="XmlApiService\Response\XmlApiEmptyResponse.cs" />
+    <Compile Include="XmlApiService\Response\XmlApiResponse.cs" />
+    <Compile Include="XmlApiService\WebRequestAdapter.cs" />
+    <Compile Include="XmlApiService\XmlApiWriteService.cs" />
+    <Compile Include="XmlApiService\XmlApiService.cs" />
+    <Compile Include="XmlApiSettings.cs" />
+    <Compile Include="Contracts\Requests\HyperFindQuery.cs" />
+    <Compile Include="Contracts\Responses\HyperFindResult.cs" />
+    <Compile Include="Contracts\Responses\Person.cs" />
+    <Compile Include="IXmlApiProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlApiProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
